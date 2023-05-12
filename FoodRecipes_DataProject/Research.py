@@ -380,10 +380,9 @@ def get_recipes_with_ingredients(ingredients):
 
     return recipes
 
-
 # Let's try it out
-
 get_recipes_with_ingredients("Oil Salt Meat")
+
 
 # random module will be used to generate a random number
 import random
@@ -393,6 +392,8 @@ import random
 # We'll need to replace the nan values with an Unknown string
 df["diet"] = df["diet"].fillna("Unknown")
 
+# Let's change the No Onion No Garlic (Sattvic) diet to No Onion No Garlic
+df["diet"] = df["diet"].replace("No Onion No Garlic (Sattvic)", "No Onion No Garlic")
 
 def get_random_diet_recipes(diet, n=5):
     # if the diet is not in diets column, we'll return "Sorry, we don't have any recipes for the given diet"
@@ -413,6 +414,8 @@ def get_random_diet_recipes(diet, n=5):
 # Let's try it out
 get_random_diet_recipes("Vegetarian")
 
+
+
 # Find all nan values in the diet column
 # print(df[df['cuisine'].isnull()])
 
@@ -423,6 +426,10 @@ df["cuisine"] = df["cuisine"].fillna("Unknown")
 def get_random_cuisine_recipes(cuisine, n=5):
     # strip the cuisine of any leading or trailing spaces
     cuisine = cuisine.strip()
+
+    # strip the cuisine of any leading or trailing " or ' characters
+    cuisine = cuisine.strip('"')
+    cuisine = cuisine.strip("'")
 
     # Capitalize the cuisine
     cuisine = cuisine.capitalize()
@@ -449,6 +456,14 @@ get_random_cuisine_recipes("Mediterranean")
 
 
 def get_recipe_info(recipe_name):
+
+    # strip the recipe_name of any leading or trailing spaces
+    recipe_name = recipe_name.strip()
+
+    # strip the recipe_name of any leading or trailing " or ' characters
+    recipe_name = recipe_name.strip('"')
+    recipe_name = recipe_name.strip("'")
+
     # if the recipe_name is not in recipe_title column, we'll return "Sorry, we don't have any recipes for the given recipe name"
     if recipe_name not in df["recipe_title"].unique():
         return "Sorry, we don't have any recipes for the given recipe name!"
@@ -476,3 +491,4 @@ def get_recipe_info(recipe_name):
 
 # Let's try it out
 get_recipe_info("Tzatziki Recipe")
+
