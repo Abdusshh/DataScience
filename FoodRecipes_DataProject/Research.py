@@ -365,10 +365,10 @@ def get_recipes_with_ingredients(ingredients):
     for ingredient in ingredients.split(" "):
         # convert the ingredient to lowercase
         ingredient = ingredient.lower()
-        # capitalize the ingredient
-        ingredient = ingredient.capitalize()
         # strip the ingredient of any leading or trailing spaces
         ingredient = ingredient.strip()
+        # make ingredients column lowercase
+        df["ingredients"] = df["ingredients"].str.lower()
 
         # print(df[df['ingredients'].str.contains(ingredient)]['recipe_title'].tolist())
         recipes.append(
