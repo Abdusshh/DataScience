@@ -1,7 +1,5 @@
 # import the necessary libraries
-import pandas as pd
 import streamlit as st
-import plotly.express as px
 from streamlit_lottie import st_lottie
 import requests
 
