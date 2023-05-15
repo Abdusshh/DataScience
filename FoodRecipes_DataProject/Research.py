@@ -75,7 +75,7 @@ new_df["total_time"] = new_df["total_time"].astype(int)
 # new_df.to_csv('cleaned_food_recipes.csv', index=False)
 
 from bokeh.plotting import figure, show
-#from bokeh.io import output_notebook
+from bokeh.io import output_notebook
 from bokeh.models import ColumnDataSource, HoverTool
 from bokeh.palettes import Category20c
 from bokeh.transform import factor_cmap
@@ -94,7 +94,7 @@ print(avg_time)
 # 3. sort the values in descending order
 avg_time = avg_time.sort_values(ascending=False)
 
-#output_notebook()
+output_notebook()
 
 # Visualize the data using Bokeh
 # create a ColumnDataSource object
@@ -159,7 +159,7 @@ print(avg_time_diet)
 # 3. sort the values in descending order
 avg_time_diet = avg_time_diet.sort_values(ascending=False)
 
-#output_notebook()
+output_notebook()
 
 # create a ColumnDataSource object
 source = ColumnDataSource(avg_time_diet.to_frame())
@@ -223,7 +223,7 @@ print(avg_likes)
 # 3. sort the values in descending order
 avg_likes = avg_likes.sort_values(ascending=False)
 
-#output_notebook()
+output_notebook()
 
 # create a ColumnDataSource object
 source = ColumnDataSource(avg_likes.to_frame())
@@ -280,7 +280,7 @@ print(avg_likes_diet)
 # 3. sort the values in descending order
 avg_likes_diet = avg_likes_diet.sort_values(ascending=False)
 
-#output_notebook()
+output_notebook()
 
 # create a ColumnDataSource object
 source = ColumnDataSource(avg_likes_diet.to_frame())
