@@ -1,6 +1,6 @@
 import pandas as pd
 
-path = "food_recipes.csv"
+path = "FoodRecipes_DataProject/food_recipes.csv"
 df = pd.read_csv(path)
 df.head()
 
@@ -81,7 +81,7 @@ from bokeh.palettes import Category20c
 from bokeh.transform import factor_cmap
 from bokeh.palettes import Turbo256
 
-current_df = pd.read_csv("cleaned_food_recipes.csv")
+current_df = pd.read_csv("FoodRecipes_DataProject/cleaned_food_recipes.csv")
 
 # 1. group the dataframe by cuisine
 grouped_df = current_df.groupby("cuisine")
