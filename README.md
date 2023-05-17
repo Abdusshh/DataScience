@@ -1,5 +1,4 @@
-# Data Science Project
+# Final Data Science Project: [Food Recipes Dashboard](https://abdusshh-vscode-project-foodrecipes-dataprojectdashboard-abv0ix.streamlit.app/)
 
-This repository is my first step trying to learn VS Code and it's Source Control features.
-
-This repository also contains my homeworks for the course Python for Data Science.
+This repository contains my homeworks for Python for Data Science course.
+This project helped me learn basic data science, important Python libraries such as numpy, pandas, matplotlib, bokeh, streamlit, etc. and VS Code's source control features.
